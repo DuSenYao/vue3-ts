@@ -1,5 +1,5 @@
-// @ts-check
 const { defineConfig } = require('eslint-define-config');
+
 module.exports = defineConfig({
   root: true,
   env: {
@@ -12,9 +12,8 @@ module.exports = defineConfig({
     parser: '@typescript-eslint/parser',
     ecmaVersion: 2020,
     sourceType: 'module',
-    jsxPragma: 'React',
     ecmaFeatures: {
-      jsx: true
+      impliedStrict: true
     }
   },
   extends: [
