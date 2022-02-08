@@ -1,0 +1,6 @@
+{
+  "stylelint.packageManager": "pnpm",
+  "eslint.packageManager": "pnpm",
+  "npm.packageManager": "pnpm",
+  "scss.validate": false
+}
