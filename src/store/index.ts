@@ -1,12 +1,26 @@
-import { createStore } from 'vuex';
+import { InjectionKey } from 'vue';
+import { createStore, Store, useStore as baseUseStore } from 'vuex';
 
-const store = createStore({
+export interface State {
+  count: number;
+}
+
+export const key: InjectionKey<Store<State>> = Symbol();
+
+export const store = createStore<State>({
   state() {
     return {
       count: 0
     };
   },
+  getters: {
+    doublue(state: any) {
+      return state.count * 2;
+    }
+  },
   strict: process.env.NODE_ENV !== 'production'
 });
 
-export default store;
+export function useStore() {
+  return baseUseStore(key);
+}

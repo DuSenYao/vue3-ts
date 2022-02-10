@@ -30,7 +30,7 @@
 // 使用 <script setup> 可以让代码变得更加精简，这也是现在开发 Vue 3 项目必备的写法。
 import { useTodos } from './useTodos';
 import { computed } from 'vue';
-import { useStore } from 'vuex';
+import { useStore } from '/@/store';
 
 let store = useStore();
 let count = computed(() => store.state.count);

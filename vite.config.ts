@@ -12,7 +12,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@',
+        find: /\/@\//,
         replacement: pathResolve('src') + '/'
       }
     ]
@@ -44,7 +44,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // 为 scss 配置共享全局变量
-        additionalData: `@import "@/styles/variable.scss";`
+        additionalData: `@import "/@/styles/variable.scss";`
       }
     }
   }
