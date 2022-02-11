@@ -3,9 +3,11 @@
   <transition name="fade">
     <h1 v-if="showTitle">Vue3</h1>
   </transition>
+  <Heading :level="1">Hello</Heading>
 </template>
 
 <script setup lang="ts">
+import Heading from '../components/HeadingLabel.jsx';
 import { ref } from 'vue';
 
 let showTitle = ref(true);

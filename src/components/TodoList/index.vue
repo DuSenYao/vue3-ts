@@ -1,13 +1,13 @@
 <template>
   <div>
     <slot></slot>
-    <input type="text" v-model="title" @keydown.enter="addTodo" />
+    <input v-model="title" type="text" @keydown.enter="addTodo" />
     <button v-if="notActive < all" @click="clear">清理</button>
     <ul v-if="todos.length">
       <!-- 通过 tag 属性去指定渲染一个元素 -->
       <transition-group name="flip-list" tag="ul">
         <li v-for="(todo, i) in todos" :key="todo.title">
-          <input type="checkbox" v-model="todo.done" />
+          <input v-model="todo.done" type="checkbox" />
           <span :class="{ done: todo.done }">{{ todo.title }}</span>
           <span class="remove-btn" @click="removeTodo(i)">❌</span>
         </li>
@@ -15,12 +15,12 @@
     </ul>
     <div v-else>暂无数据</div>
     <div>
-      全选<input type="checkbox" v-model="allDone" />
+      全选<input v-model="allDone" type="checkbox" />
       <span>{{ notActive }}/{{ all }}</span>
     </div>
   </div>
   <transition name="modal">
-    <div class="info-wrapper" v-show="showModal">
+    <div v-show="showModal" class="info-wrapper">
       <div class="info">请输入内容！</div>
     </div>
   </transition>
@@ -42,9 +42,14 @@ let { showModal, todos, addTodo, clear, removeTodo, notActive, all, allDone, tit
 
 <style lang="scss" scoped>
 .done {
-  color: rgb(255, 0, 0);
+  color: $basic-color;
   // 在 style 内部，可以使用 v-bind 函数绑定值，动态地通过 JS 的变量实现 CSS 的样式修改
   content: v-bind(title);
+
+  // :deep() 样式穿透
+  :deep(.el-button) {
+    color: #334453;
+  }
 }
 
 .info-wrapper {

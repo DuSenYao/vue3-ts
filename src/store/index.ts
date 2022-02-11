@@ -14,8 +14,8 @@ export const store = createStore<State>({
     };
   },
   getters: {
-    doublue(state: any) {
-      return state.count * 2;
+    doublue({ count }) {
+      return count * 2;
     }
   },
   strict: process.env.NODE_ENV !== 'production'
