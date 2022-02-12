@@ -1,5 +1,5 @@
 // 因为 ref 和 computed 等功能都可以从 Vue 中全局引入，所以就可以把组件进行任意颗粒度的拆分和组合，这样就大大提高了代码的可维护性和复用性。
-import { ref, computed, WritableComputedRef } from 'vue';
+import { ref, computed, Ref } from 'vue';
 import { useStorage } from '/@/utils/storage';
 
 // 把和清单相关的所有数据和方法，都放在函数内部定义并且返回，这样这个函数就可以放在任意的地方来维护。
@@ -13,7 +13,7 @@ export function useTodos() {
     done: boolean;
   }
 
-  const todos = ref<Todo[]>(useStorage('todos', []));
+  const todos: Ref<Todo[]> = ref(useStorage('todos', []));
 
   function addTodo() {
     if (!title.value) {
@@ -40,11 +40,11 @@ export function useTodos() {
 
   const notActive = computed(() => todos.value.filter((v: Todo) => !v.done).length);
   const all = computed(() => todos.value.length);
-  const allDone: WritableComputedRef<boolean> = computed({
+  const allDone = computed({
     get() {
       return notActive.value === 0;
     },
-    set(val) {
+    set(val: boolean) {
       todos.value.forEach((todo: Todo) => {
         todo.done = val;
       });
