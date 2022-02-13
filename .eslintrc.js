@@ -25,7 +25,7 @@ module.exports = defineConfig({
   rules: {
     'vue/script-setup-uses-vars': 'error',
     '@typescript-eslint/no-var-requires': 'off',
-    '@typescript-eslint/no-explicit-any': 'off'
+    '@typescript-eslint/no-explicit-any': 'off',
     // '@typescript-eslint/ban-ts-ignore': 'off',
     // '@typescript-eslint/explicit-function-return-type': 'off',
     // '@typescript-eslint/no-empty-function': 'off',
@@ -55,6 +55,7 @@ module.exports = defineConfig({
     // 'vue/one-component-per-file': 'off',
     // 'vue/html-closing-bracket-newline': 'off',
     // 'vue/max-attributes-per-line': 'off',
+    'vue/multi-word-component-names': 'off'
     // 'vue/multiline-html-element-content-newline': 'off',
     // 'vue/singleline-html-element-content-newline': 'off',
     // 'vue/attribute-hyphenation': 'off',

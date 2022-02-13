@@ -2,12 +2,19 @@
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
 import Home from '/@/pages/Home.vue';
 import { getToken } from '/@/utils/auth';
+import NProgress from 'nprogress';
+
+const WHITE_LIST = ['/login'];
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/login',
+    component: () => import('/@/pages/Login.vue')
   },
   {
     path: '/about',
@@ -22,12 +29,26 @@ const router: Router = createRouter({
   scrollBehavior: () => ({ left: 0, top: 0 })
 });
 
-router.beforeEach(async (to, from, next) => {
+router.beforeEach(async to => {
+  NProgress.start();
+
   const token = getToken();
-  if (!token) {
-    next('/');
+
+  if (token) {
+    if (to.path === '/login') {
+      return '/';
+    }
+    return true;
   }
+
+  if (WHITE_LIST.includes(to.path)) return true;
+
+  // return '/login';
   return true;
+});
+
+router.afterEach(() => {
+  NProgress.done();
 });
 
 export default router;

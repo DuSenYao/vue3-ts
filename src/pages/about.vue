@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <router-link to="/">首页</router-link> |
+    <router-link to="/about">关于</router-link>
+  </div>
   <button @click="toggle">click</button>
   <transition name="fade">
     <h1 v-if="showTitle">Vue3</h1>

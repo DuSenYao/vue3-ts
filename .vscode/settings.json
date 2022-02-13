@@ -2,5 +2,8 @@
   "stylelint.packageManager": "pnpm",
   "eslint.packageManager": "pnpm",
   "npm.packageManager": "pnpm",
-  "scss.validate": false
+  "scss.validate": false,
+  "path-intellisense.mappings": {
+    "/@/": "${workspaceRoot}/src"
+  }
 }
