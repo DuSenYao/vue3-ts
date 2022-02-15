@@ -1,6 +1,6 @@
 // createRouter 用来新建路由实例，createWebHashHistory 用来配置内部使用 hash 模式的路由
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
-import Home from '/@/pages/Home.vue';
+import Home from '../pages/Home.vue';
 import { getToken } from '/@/utils/auth';
 import NProgress from 'nprogress';
 
@@ -43,8 +43,7 @@ router.beforeEach(async to => {
 
   if (WHITE_LIST.includes(to.path)) return true;
 
-  // return '/login';
-  return true;
+  return '/login';
 });
 
 router.afterEach(() => {

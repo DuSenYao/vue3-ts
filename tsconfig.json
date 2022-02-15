@@ -14,7 +14,8 @@
     "lib": ["esnext", "dom"],
     "types": ["element-plus/global", "vite/client"],
     "paths": {
-      "/@/*": ["src/*"]
+      "/@/*": ["src/*"],
+      "/#/*": ["types/*"]
     },
     "noLib": false,
     "forceConsistentCasingInFileNames": true,

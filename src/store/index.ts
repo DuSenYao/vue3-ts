@@ -1,23 +1,23 @@
 import { InjectionKey } from 'vue';
 import { createStore, Store, useStore as baseUseStore } from 'vuex';
+import { State } from '/#/store';
 
-export interface State {
-  count: number;
-}
+import getters from './getters';
+import actions from './actions';
+import mutations from './mutations';
 
 export const key: InjectionKey<Store<State>> = Symbol();
 
 export const store = createStore<State>({
   state() {
     return {
-      count: 0
+      count: 0,
+      removeRoutes: []
     };
   },
-  getters: {
-    doublue({ count }) {
-      return count * 2;
-    }
-  },
+  getters,
+  actions,
+  mutations,
   strict: process.env.NODE_ENV !== 'production'
 });
 

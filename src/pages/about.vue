@@ -5,19 +5,31 @@
   </div>
   <button @click="toggle">click</button>
   <transition name="fade">
-    <h1 v-if="showTitle">Vue3</h1>
+    <h1 v-if="showTitle">{{ count }}</h1>
   </transition>
   <Heading :level="1">Hello</Heading>
 </template>
 
 <script setup lang="ts">
-import Heading from '../components/HeadingLabel.jsx';
+import Heading from '/@/components/HeadingLabel';
 import { ref } from 'vue';
 
 let showTitle = ref(true);
 function toggle() {
   showTitle.value = !showTitle.value;
 }
+
+function fib(n: number): number {
+  let arr = [1, 1];
+  let i = 2;
+  while (i <= n) {
+    arr[i] = arr[i - 1] + arr[i - 2];
+    i++;
+  }
+  return arr[n];
+}
+
+let count = ref(fib(38));
 </script>
 
 <style lang="scss" scoped>
