@@ -1,12 +1,8 @@
 module.exports = {
   root: true,
   defaultSeverity: 'warning',
-  extends: [
-    'stylelint-config-recommended-scss',
-    'stylelint-config-sass-guidelines',
-    'stylelint-config-recess-order',
-    'stylelint-config-prettier'
-  ],
+  extends: ['stylelint-config-recommended-scss', 'stylelint-config-recess-order', 'stylelint-config-prettier'],
+  plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
     'selector-class-pattern': null,
     'order/properties-alphabetical-order': null,
@@ -56,9 +52,8 @@ module.exports = {
       files: ['*.vue', '**/*.vue'],
       extends: [
         'stylelint-config-recommended-scss',
-        'stylelint-config-sass-guidelines',
-        'stylelint-config-recommended-vue',
-        'stylelint-config-recess-order'
+        'stylelint-config-recess-order',
+        'stylelint-config-recommended-vue'
       ],
       rules: {
         'keyframes-name-pattern': null,
