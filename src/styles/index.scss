@@ -6,3 +6,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}

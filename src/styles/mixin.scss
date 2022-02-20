@@ -1,0 +1,19 @@
+$namespace: 'vt';
+$state-prefix: 'is-';
+
+// 通用样式前缀
+@mixin b($block) {
+  $B: $namespace + '-' + $block !global;
+  .#{$B} {
+    @content;
+  }
+}
+
+// 添加前缀
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
