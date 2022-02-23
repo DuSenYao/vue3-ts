@@ -1,4 +1,4 @@
-import { App, Plugin } from 'vue';
+import { App, Plugin, getCurrentInstance, ComponentInternalInstance } from 'vue';
 
 export const withInstall = <T>(component: T, alias?: string) => {
   const comp = component as any;
@@ -10,3 +10,12 @@ export const withInstall = <T>(component: T, alias?: string) => {
   };
   return component as T & Plugin;
 };
+
+export function useGlobalConfig() {
+  const instance: ComponentInternalInstance | null = getCurrentInstance();
+  if (!instance) {
+    console.log('useGlobalConfig 必须得在 setup 里面使用');
+    return;
+  }
+  return instance.appContext.config.globalProperties.$AILEMENTE || {};
+}

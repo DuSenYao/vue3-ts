@@ -6,5 +6,6 @@
   "path-intellisense.mappings": {
     "/@/": "${workspaceRoot}/src",
     "/#/": "${workspaceRoot}/types"
-  }
+  },
+  "i18n-ally.localesPaths": []
 }

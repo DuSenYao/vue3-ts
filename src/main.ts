@@ -8,4 +8,10 @@ import 'element-plus/dist/index.css';
 
 import '/@/styles/index.scss'; // global css
 
-createApp(App).use(store, key).use(router).use(ElementPlus).mount('#app');
+const app = createApp(App);
+
+app.config.globalProperties.$AILEMENTE = {
+  size: 'medium'
+};
+
+app.use(store, key).use(router).use(ElementPlus).mount('#app');

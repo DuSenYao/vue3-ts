@@ -8,9 +8,12 @@
     <h1 v-if="showTitle">{{ count }}</h1>
   </transition>
   <Heading :level="1">Hello</Heading>
+
+  <xlsx-vue />
 </template>
 
 <script setup lang="ts">
+import XlsxVue from './Xlsx.vue';
 import Heading from '/@/components/HeadingLabel';
 import { ref } from 'vue';
 

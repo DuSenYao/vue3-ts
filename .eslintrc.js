@@ -55,7 +55,7 @@ module.exports = defineConfig({
     // 'vue/one-component-per-file': 'off',
     // 'vue/html-closing-bracket-newline': 'off',
     // 'vue/max-attributes-per-line': 'off',
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
     // 'vue/multiline-html-element-content-newline': 'off',
     // 'vue/singleline-html-element-content-newline': 'off',
     // 'vue/attribute-hyphenation': 'off',
@@ -72,6 +72,7 @@ module.exports = defineConfig({
     //     svg: 'always',
     //     math: 'always'
     //   }
-    // ]
+    // ],
+    'no-var': 2
   }
 });
