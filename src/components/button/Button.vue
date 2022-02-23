@@ -1,9 +1,7 @@
 <template>
-  <div>
-    <button class="vt-button" :class="[buttonSize ? `vt-button--${buttonSize}}` : '']">
-      <slot />
-    </button>
-  </div>
+  <button :class="['vt-button', buttonSize ? `vt-button--${buttonSize}` : '']">
+    <slot></slot>
+  </button>
 </template>
 
 <script lang="ts">

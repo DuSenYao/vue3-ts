@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>LOGIN</h1>
+    <h1 class="login">LOGIN</h1>
     <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="120px">
       <el-form-item label="用户名" prop="name">
         <el-input v-model="form.name"></el-input>
@@ -58,4 +58,8 @@ const signIn = (formEl: FormInstace | undefined) => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.login {
+  color: #abc;
+}
+</style>

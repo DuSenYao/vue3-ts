@@ -19,8 +19,7 @@ describe('按钮测试', () => {
         size
       }
     });
-    console.log(wrapper);
-    // size内部通过class控制
+    // size 内部通过 class 控制
     expect(wrapper.classes()).toContain('vt-button--small');
   });
 });
