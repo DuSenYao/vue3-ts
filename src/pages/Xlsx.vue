@@ -4,6 +4,11 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'XlsxVue'
+};
+</script>
 <script setup lang="ts">
 import * as xlsx from 'xlsx';
 
@@ -63,5 +68,3 @@ async function handleFileAsync(e: any) {
   console.log(RU, TH);
 }
 </script>
-
-<style lang="scss" scoped></style>

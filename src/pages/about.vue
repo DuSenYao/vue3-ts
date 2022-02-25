@@ -27,7 +27,7 @@ function fib(n: number): number {
   let i = 2;
   while (i <= n) {
     arr[i] = arr[i - 1] + arr[i - 2];
-    i++;
+    i += 1;
   }
   return arr[n];
 }
