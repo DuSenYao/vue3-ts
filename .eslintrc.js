@@ -37,14 +37,14 @@ module.exports = defineConfig({
     // '@typescript-eslint/no-non-null-assertion': 'off',
     // '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-unused-vars': [
-      'error',
+      'warn',
       {
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_'
       }
     ],
     'no-unused-vars': [
-      'error',
+      'warn',
       {
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_'
@@ -286,7 +286,6 @@ module.exports = defineConfig({
     'no-ternary': 0,
     'no-throw-literal': 2,
     'no-undef-init': 2,
-    'no-underscore-dangle': 1,
     'no-use-before-define': 2,
     'no-useless-call': 2,
     'no-void': 2,
@@ -308,7 +307,6 @@ module.exports = defineConfig({
     'func-style': 0,
     'guard-for-in': 0,
     'id-length': 0,
-    'init-declarations': 1,
     'lines-around-comment': 0,
     'max-depth': [1, 4],
     'max-len': [1, { code: 120, ignoreUrls: true, ignoreTemplateLiterals: true, ignoreRegExpLiterals: true }],
