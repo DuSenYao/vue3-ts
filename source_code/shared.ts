@@ -10,7 +10,7 @@ export function isOn(key: string) {
   return /^on[A-Z]/.test(key);
 }
 
-/* eslint-disable */
+/* eslint-disable no-bitwise */
 export const ShapeFlags = {
   ELEMENT: 1, // html标签
   TEXT: 1 << 1, // 文本

@@ -286,7 +286,6 @@ module.exports = defineConfig({
     'no-ternary': 0,
     'no-throw-literal': 2,
     'no-undef-init': 2,
-    'no-use-before-define': 2,
     'no-useless-call': 2,
     'no-void': 2,
     'prefer-rest-params': 2,

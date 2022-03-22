@@ -14,11 +14,11 @@ export default defineConfig({
     alias: [
       {
         find: /\/@\//,
-        replacement: pathResolve('src') + '/'
+        replacement: `${pathResolve('src')}/`
       },
       {
         find: /\/#\//,
-        replacement: pathResolve('types') + '/'
+        replacement: `${pathResolve('types')}/`
       }
     ]
   },
