@@ -47,7 +47,7 @@ const rules = reactive({
 
 const signIn = (formEl: FormInstace | undefined) => {
   if (!formEl) return;
-  formEl.validate(valid => {
+  formEl.validate((valid) => {
     if (valid) {
       setToken(`user=${form.name}`);
       router.push('/');

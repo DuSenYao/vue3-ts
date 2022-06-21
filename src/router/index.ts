@@ -29,7 +29,7 @@ const router: Router = createRouter({
   scrollBehavior: () => ({ left: 0, top: 0 })
 });
 
-router.beforeEach(async to => {
+router.beforeEach(async (to) => {
   NProgress.start();
 
   const token = getToken();

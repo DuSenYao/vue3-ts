@@ -8,7 +8,7 @@ const mutations: MutationTree<State> = {
     state.removeRoutes = arr;
   },
   [REMOVE_ROUTES](state) {
-    state.removeRoutes.forEach(route => {
+    state.removeRoutes.forEach((route) => {
       router.removeRoute(route);
     });
     state.removeRoutes = [];
