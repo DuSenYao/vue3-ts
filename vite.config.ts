@@ -29,7 +29,7 @@ export default defineConfig({
     open: true
   },
   build: {
-    target: 'es2015',
+    target: 'es2017',
     cssTarget: 'chrome80',
     outDir: 'dist',
     // minify: 'terser',
