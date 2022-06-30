@@ -16,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
 import { ElForm } from 'element-plus';
 import { setToken } from '/@/utils/auth';
 import router from '/@/router';

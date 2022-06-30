@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import XlsxVue from './Xlsx.vue';
 import Heading from '/@/components/HeadingLabel';
-import { ref } from 'vue';
 
 let showTitle = ref(true);
 function toggle() {
