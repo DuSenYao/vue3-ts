@@ -9,7 +9,7 @@ const service = axios.create({
 service.interceptors.request.use();
 
 service.interceptors.response.use(
-  response => {
+  (response) => {
     const res = response.data;
     if (res.code !== 200) {
       console.log(res.message);
@@ -17,7 +17,7 @@ service.interceptors.response.use(
     }
     return res;
   },
-  error => {
+  (error) => {
     console.log('接口信息报错', error);
     return Promise.reject(error);
   }

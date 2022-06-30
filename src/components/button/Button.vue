@@ -11,7 +11,7 @@ export default {
 </script>
 
 <script setup lang="ts">
-import { withDefaults, computed } from 'vue';
+import { computed } from 'vue';
 import { useGlobalConfig } from '/@/utils/index';
 
 interface Props {

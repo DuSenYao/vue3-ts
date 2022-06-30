@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
 import { ElForm } from 'element-plus';
 import { setToken } from '/@/utils/auth';
 import router from '/@/router';
+import { reactive, ref } from 'vue';
 
 type FormInstace = InstanceType<typeof ElForm>;
 const ruleFormRef = ref<FormInstace>();
@@ -47,7 +47,7 @@ const rules = reactive({
 
 const signIn = (formEl: FormInstace | undefined) => {
   if (!formEl) return;
-  formEl.validate(valid => {
+  formEl.validate((valid) => {
     if (valid) {
       setToken(`user=${form.name}`);
       router.push('/');
