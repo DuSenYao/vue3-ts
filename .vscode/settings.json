@@ -3,6 +3,8 @@
     "/@/": "${workspaceRoot}/src",
     "/#/": "${workspaceRoot}/types"
   },
-  "i18n-ally.localesPaths": [],
   "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "pinia"
+  ]
 }
