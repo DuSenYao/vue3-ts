@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'Heading',
+  name: 'HeadingLabel',
   props: {
     level: {
       type: Number,

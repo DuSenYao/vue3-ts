@@ -7,7 +7,7 @@
   <transition name="fade">
     <h1 v-if="showTitle">{{ count }}</h1>
   </transition>
-  <!-- <Heading :level="1">Hello</Heading> -->
+  <heading-label :level="1">Hello World</heading-label>
 
   <xlsx-vue />
 </template>
@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import XlsxVue from './Xlsx.vue';
-// import Heading from '/@/components/HeadingLabel.tsx';
+import HeadingLabel from '/@/components/HeadingLabel';
 
 let showTitle = ref(true);
 function toggle() {
