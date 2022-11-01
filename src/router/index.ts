@@ -1,6 +1,5 @@
 // createRouter 用来新建路由实例，createWebHashHistory 用来配置内部使用 hash 模式的路由
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
-import Home from '../pages/Home.vue';
 import { getToken } from '/@/utils/auth';
 import NProgress from 'nprogress';
 
@@ -10,7 +9,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: () => import('/@/pages/Home.vue')
   },
   {
     path: '/login',

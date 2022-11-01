@@ -39,7 +39,6 @@ export function useTodos() {
   }
 
   const notActive = computed(() => todos.value.filter((v: Todo) => !v.done).length);
-  const all = computed(() => todos.value.length);
   const allDone = computed({
     get() {
       return notActive.value === 0;
@@ -51,5 +50,5 @@ export function useTodos() {
     }
   });
 
-  return { title, showModal, todos, addTodo, clear, removeTodo, notActive, all, allDone };
+  return { title, showModal, todos, addTodo, clear, removeTodo, notActive, allDone };
 }
