@@ -9,6 +9,7 @@ export default {
   name: 'XlsxVue'
 };
 </script>
+
 <script setup lang="ts">
 import * as xlsx from 'xlsx';
 
@@ -27,10 +28,6 @@ interface LangXlsx {
   韩语: string;
 }
 
-interface LangObj {
-  [prop: string]: string;
-}
-
 async function handleFileAsync(e: any) {
   const file = e.target.files[0];
   const data = await file.arrayBuffer();
@@ -40,31 +37,40 @@ async function handleFileAsync(e: any) {
   let worksheet = workbook.Sheets[workbook.SheetNames[0]];
   let jsa: LangXlsx[] = xlsx.utils.sheet_to_json(worksheet);
 
-  let ZH: LangObj = {};
-  let EN: LangObj = {};
-  let AR: LangObj = {};
-  let DE: LangObj = {};
-  let ES: LangObj = {};
-  let FR: LangObj = {};
-  let HI: LangObj = {};
-  let JA: LangObj = {};
-  let KO: LangObj = {};
-  let RU: LangObj = {};
-  let TH: LangObj = {};
+  const languageDataObj: {
+    [prop: string]: {
+      [prop: string]: string;
+    };
+  } = {
+    ZH: {},
+    EN: {},
+    DE: {},
+    AR: {},
+    ES: {},
+    FR: {},
+    HI: {},
+    JA: {},
+    KO: {},
+    RU: {},
+    TH: {}
+  };
 
   jsa.forEach(({ Key, 俄语, 印地语, 德语, 日语, 汉语, 法语, 泰语, 英语, 西语, 阿拉伯语, 韩语 }) => {
-    ZH[Key] = 汉语;
-    EN[Key] = 英语;
-    AR[Key] = 阿拉伯语;
-    DE[Key] = 德语;
-    ES[Key] = 西语;
-    FR[Key] = 法语;
-    HI[Key] = 印地语;
-    JA[Key] = 日语;
-    KO[Key] = 韩语;
-    RU[Key] = 俄语;
-    TH[Key] = 泰语;
+    if (!英语) return;
+    languageDataObj['ZH'][Key] = 汉语;
+    languageDataObj['EN'][Key] = 英语;
+    languageDataObj['AR'][Key] = 阿拉伯语;
+    languageDataObj['DE'][Key] = 德语;
+    languageDataObj['ES'][Key] = 西语;
+    languageDataObj['FR'][Key] = 法语;
+    languageDataObj['HI'][Key] = 印地语;
+    languageDataObj['JA'][Key] = 日语;
+    languageDataObj['KO'][Key] = 韩语;
+    languageDataObj['RU'][Key] = 俄语;
+    languageDataObj['TH'][Key] = 泰语;
   });
-  console.log(RU, TH);
+  for (const prop in languageDataObj) {
+    console.log(prop, languageDataObj[prop]);
+  }
 }
 </script>

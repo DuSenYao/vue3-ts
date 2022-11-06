@@ -2,7 +2,7 @@
   <div>
     <slot></slot>
     <input v-model="title" type="text" @keydown.enter="addTodo" />
-    <button v-if="notActive < all" @click="clear">清理</button>
+    <button v-if="notActive < todos.length" @click="clear">清理</button>
     <ul v-if="todos.length">
       <!-- 通过 tag 属性去指定渲染一个元素 -->
       <transition-group name="flip-list" tag="ul">
@@ -16,7 +16,7 @@
     <div v-else>暂无数据</div>
     <div>
       全选<input v-model="allDone" type="checkbox" />
-      <span>{{ notActive }}/{{ all }}</span>
+      <span>{{ notActive }}/{{ todos.length }}</span>
     </div>
   </div>
   <transition name="modal">
@@ -44,14 +44,12 @@ let count = computed(() => store.state.count);
 console.log(count.value);
 
 // 在 <script setup> 标签内定义的变量和函数，都可以在模板中直接使用。
-let { showModal, todos, addTodo, clear, removeTodo, notActive, all, allDone, title } = useTodos();
+let { showModal, todos, addTodo, clear, removeTodo, notActive, allDone, title } = useTodos();
 </script>
 
 <style lang="scss" scoped>
 .done {
   color: $basic-color;
-  // 在 style 内部，可以使用 v-bind 函数绑定值，动态地通过 JS 的变量实现 CSS 的样式修改
-  content: v-bind(title);
 
   // :deep() 样式穿透
   :deep(.el-button) {
