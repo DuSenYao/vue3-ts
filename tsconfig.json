@@ -7,6 +7,8 @@
     "strict": true,
     "jsx": "preserve",
     "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
     "baseUrl": ".",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,

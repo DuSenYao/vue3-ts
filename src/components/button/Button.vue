@@ -4,7 +4,7 @@
   </button>
 </template>
 
-<script lang="ts">
+<script>
 export default {
   name: 'VTButton'
 };
@@ -14,7 +14,7 @@ export default {
 import { computed } from 'vue';
 import { useGlobalConfig } from '/@/utils/index';
 
-interface Props {
+export interface Props {
   size?: '' | 'small' | 'medium' | 'large';
   type?: '' | 'primary' | 'success' | 'danger';
 }
@@ -24,9 +24,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const globalConfig = useGlobalConfig();
-const buttonSize = computed(() => {
-  return props.size || globalConfig.size;
-});
+const buttonSize = computed(() => props.size || globalConfig.size);
 </script>
 
 <style lang="scss" scoped>

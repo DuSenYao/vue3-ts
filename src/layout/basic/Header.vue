@@ -11,7 +11,7 @@ export default {
 <script setup lang="ts">
 import { withDefaults } from 'vue';
 
-interface Props {
+export interface Props {
   height?: string;
 }
 
