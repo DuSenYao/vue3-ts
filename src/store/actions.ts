@@ -7,7 +7,7 @@ import { SET_REMOVE_ROUTES, REMOVE_ROUTES } from './mutations/constant';
 const actions: ActionTree<State, State> = {
   addRoutes({ commit }, accessRoutes) {
     // 添加动态路由，同时保存移除函数，将来如果需要重置路由可以用到它们
-    const removeRoutes = [];
+    const removeRoutes: Array<() => void> = [];
     accessRoutes.forEach((route: RouteRecordRaw) => {
       const removeRoute = router.addRoute(route);
       removeRoutes.push(removeRoute);

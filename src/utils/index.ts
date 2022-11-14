@@ -1,15 +1,4 @@
-import { App, Plugin, getCurrentInstance, ComponentInternalInstance } from 'vue';
-
-export const withInstall = <T>(component: T, alias?: string) => {
-  const comp = component as any;
-  comp.install = (app: App) => {
-    app.component(comp.name || comp.displayName, component);
-    if (alias) {
-      app.config.globalProperties[alias] = component;
-    }
-  };
-  return component as T & Plugin;
-};
+import { getCurrentInstance, ComponentInternalInstance } from 'vue';
 
 export function useGlobalConfig() {
   const instance: ComponentInternalInstance | null = getCurrentInstance();

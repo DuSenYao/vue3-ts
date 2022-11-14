@@ -10,6 +10,9 @@
     "declaration": true,
     "declarationMap": true,
     "baseUrl": ".",
+    "allowJs": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -20,18 +23,13 @@
       "/#/*": ["types/*"]
     },
     "noLib": false,
+    "strictFunctionTypes": false,
     "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
     "removeComments": true
   },
-  "include": [
-    "*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "vite.config.ts",
-    "src/**/*.jsx"
-  ],
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "include": ["*.d.ts", "src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "tests/server/**/*.ts", "**/*.js"]
 }
