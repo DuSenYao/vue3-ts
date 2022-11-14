@@ -1,4 +1,3 @@
 FROM nginx:1.15-alpine
-COPY html /etc/nginx/html
-COPY conf /etc/nginx/
-WORKDIR /etc/nginx/html
+COPY dist /etc/nginx/vue3-ts
+WORKDIR /etc/nginx/vue3-ts
