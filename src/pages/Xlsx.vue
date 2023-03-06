@@ -5,9 +5,11 @@
 </template>
 
 <script lang="ts">
-export default {
-  name: 'XlsxVue'
-};
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'XlsxPage'
+});
 </script>
 
 <script setup lang="ts">
@@ -56,7 +58,6 @@ async function handleFileAsync(e: any) {
   };
 
   jsa.forEach(({ Key, 俄语, 印地语, 德语, 日语, 汉语, 法语, 泰语, 英语, 西语, 阿拉伯语, 韩语 }) => {
-    if (!英语) return;
     languageDataObj['ZH'][Key] = 汉语;
     languageDataObj['EN'][Key] = 英语;
     languageDataObj['AR'][Key] = 阿拉伯语;
@@ -69,6 +70,7 @@ async function handleFileAsync(e: any) {
     languageDataObj['RU'][Key] = 俄语;
     languageDataObj['TH'][Key] = 泰语;
   });
+
   for (const prop in languageDataObj) {
     console.log(prop, languageDataObj[prop]);
   }

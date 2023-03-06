@@ -1,5 +1,5 @@
 // 因为 ref 和 computed 等功能都可以从 Vue 中全局引入，所以就可以把组件进行任意颗粒度的拆分和组合，这样就大大提高了代码的可维护性和复用性。
-import { ref, computed, Ref } from 'vue';
+import { ref, computed, Ref, reactive } from 'vue';
 import { useStorage } from '/@/utils/storage';
 
 interface Todo {
@@ -11,6 +11,7 @@ interface Todo {
 export function useTodos() {
   // ref 函数使任何响应式变量在任何地方起作用，ref 接收参数并将其包裹在一个带有 value property 的对象中返回，然后可以使用该 property 访问或更改响应式变量的值
   const title = ref(''); // { value: '' }
+
   const showModal = ref(false);
 
   const todos: Ref<Todo[]> = ref(useStorage('todos', []));
@@ -38,10 +39,10 @@ export function useTodos() {
     todos.value.splice(i, 1);
   }
 
-  const notActive = computed(() => todos.value.filter((v: Todo) => !v.done).length);
+  const selectedNum = computed(() => todos.value.filter((v: Todo) => v.done).length);
   const allDone = computed({
     get() {
-      return notActive.value === 0;
+      return selectedNum.value === todos.value.length;
     },
     set(val: boolean) {
       todos.value.forEach((todo: Todo) => {
@@ -50,5 +51,5 @@ export function useTodos() {
     }
   });
 
-  return { title, showModal, todos, addTodo, clear, removeTodo, notActive, allDone };
+  return { title, showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone };
 }

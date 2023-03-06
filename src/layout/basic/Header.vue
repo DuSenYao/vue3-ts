@@ -1,19 +1,35 @@
 <template>
-  <header class="vt-header"> 头部 </header>
+  <header class="vt-header">
+    <template v-for="({ name, to }, i) in linkList" :key="to">
+      <router-link :to="to">{{ name }}</router-link>
+      <span>{{ linkList.length - 1 !== i ? ' | ' : '' }}</span>
+    </template>
+  </header>
 </template>
 
 <script lang="ts">
-export default {
-  name: 'VTHeader'
-};
+export default defineComponent({
+  name: 'LayoutHeader'
+});
 </script>
 
 <script setup lang="ts">
-import { withDefaults } from 'vue';
+import { defineComponent, withDefaults, reactive } from 'vue';
 
 export interface Props {
   height?: string;
 }
+
+let linkList = reactive([
+  {
+    name: '首页',
+    to: '/'
+  },
+  {
+    name: '关于',
+    to: '/about'
+  }
+]);
 
 // 使用类型声明时的默认 props 值
 withDefaults(defineProps<Props>(), {

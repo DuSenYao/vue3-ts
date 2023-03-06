@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1 class="login">LOGIN</h1>
+  <div class="login">
+    <h1 class="title">LOGIN</h1>
     <el-form ref="ruleFormRef" :model="form" :rules="rules" label-width="120px">
       <el-form-item label="用户名" prop="name">
         <el-input v-model="form.name"></el-input>
@@ -18,8 +18,9 @@
 <script setup lang="ts">
 import { ElForm } from 'element-plus';
 import { setToken } from '/@/utils/auth';
-import router from '/@/router';
 import { reactive, ref } from 'vue';
+
+import router from '/@/router';
 
 type FormInstace = InstanceType<typeof ElForm>;
 const ruleFormRef = ref<FormInstace>();
@@ -60,6 +61,10 @@ const signIn = (formEl: FormInstace | undefined) => {
 
 <style lang="scss">
 .login {
-  color: #abc;
+  padding: 200px;
+
+  .title {
+    color: #abc;
+  }
 }
 </style>

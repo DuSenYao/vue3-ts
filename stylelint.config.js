@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   defaultSeverity: 'warning',
-  extends: ['stylelint-config-recommended-scss', 'stylelint-config-recess-order', 'stylelint-config-prettier'],
+  extends: ['stylelint-config-recommended-scss', 'stylelint-config-recess-order'],
   plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
     'selector-class-pattern': null,
@@ -31,9 +31,6 @@ module.exports = {
         ]
       }
     ],
-    'unicode-bom': 'never',
-    'declaration-colon-space-after': 'always-single-line',
-    'declaration-colon-space-before': 'never',
     'declaration-block-trailing-semicolon': 'always',
     'rule-empty-line-before': [
       'always',
@@ -60,10 +57,6 @@ module.exports = {
     'function-url-quotes': 'always',
     // 指定字符串引号为单引号
     'string-quotes': 'single',
-    // 在规则的分号之前不允许有空格
-    'at-rule-semicolon-space-before': 'never',
-    // 首行不允许空行
-    'no-empty-first-line': true,
     'max-nesting-depth': [10, { ignore: ['blockless-at-rules', 'pseudo-classes'] }],
     'selector-no-qualifying-type': [true, { ignore: ['attribute', 'class', 'id'] }],
     'declaration-colon-newline-after': null

@@ -2,23 +2,26 @@
 import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
 import { getToken } from '/@/utils/auth';
 import NProgress from 'nprogress';
+import LAYOUT from '/@/layout/basic/index.vue';
 
 const WHITE_LIST = ['/login'];
 
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('/@/pages/Home.vue')
-  },
-  {
     path: '/login',
     component: () => import('/@/pages/Login.vue')
   },
   {
+    path: '/',
+    name: 'Home',
+    component: LAYOUT,
+    children: [{ path: '/', component: () => import('/@/pages/Home.vue') }]
+  },
+  {
     path: '/about',
     name: 'About',
-    component: () => import('../pages/About.vue')
+    component: LAYOUT,
+    children: [{ path: '/about', component: () => import('/@/pages/About.vue') }]
   }
 ];
 

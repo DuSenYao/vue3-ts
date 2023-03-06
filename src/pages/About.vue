@@ -1,15 +1,11 @@
 <template>
-  <div>
-    <router-link to="/">首页</router-link> |
-    <router-link to="/about">关于</router-link>
-  </div>
   <button @click="toggle">click</button>
   <transition name="fade">
     <h1 v-if="showTitle">{{ count }}</h1>
   </transition>
   <HeadingLabel :level="1">Hello World</HeadingLabel>
 
-  <xlsx-vue />
+  <XlsxVue />
 </template>
 
 <script setup lang="ts">

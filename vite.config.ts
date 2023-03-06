@@ -24,13 +24,14 @@ export default defineConfig({
   },
   server: {
     port: 3333,
-    host: '127.0.0.1',
+    host: 'localhost',
     open: true
   },
   build: {
-    target: 'es2017',
+    target: 'esnext',
     outDir: 'dist',
-    chunkSizeWarningLimit: 2000
+    chunkSizeWarningLimit: 2000,
+    sourcemap: true
   },
   css: {
     preprocessorOptions: {
