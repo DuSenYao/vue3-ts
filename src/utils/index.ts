@@ -1,4 +1,4 @@
-import { getCurrentInstance, ComponentInternalInstance } from 'vue';
+import { getCurrentInstance, type ComponentInternalInstance } from 'vue';
 
 export function useGlobalConfig() {
   const instance: ComponentInternalInstance | null = getCurrentInstance();

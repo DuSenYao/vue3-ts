@@ -1,8 +1,9 @@
-import { ActionTree } from 'vuex';
-import { State } from '/#/store';
-import router from '/@/router';
-import { RouteRecordRaw } from 'vue-router';
+import type { ActionTree } from 'vuex';
+import type { State } from '/#/store';
+import type { RouteRecordRaw } from 'vue-router';
 import { SET_REMOVE_ROUTES, REMOVE_ROUTES } from './mutations/constant';
+
+import router from '/@/router';
 
 const actions: ActionTree<State, State> = {
   addRoutes({ commit }, accessRoutes) {

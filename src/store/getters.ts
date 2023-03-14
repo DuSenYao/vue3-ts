@@ -1,5 +1,5 @@
-import { State } from '/#/store';
-import { GetterTree } from 'vuex';
+import type { State } from '/#/store';
+import type { GetterTree } from 'vuex';
 
 const getters: GetterTree<State, State> = {
   doublue({ count }) {

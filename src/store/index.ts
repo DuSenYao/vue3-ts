@@ -1,6 +1,6 @@
-import { InjectionKey } from 'vue';
+import type { InjectionKey } from 'vue';
 import { createStore, Store, useStore as baseUseStore } from 'vuex';
-import { State } from '/#/store';
+import type { State } from '/#/store';
 
 import getters from './getters';
 import actions from './actions';

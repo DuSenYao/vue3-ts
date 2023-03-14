@@ -5,13 +5,13 @@
   </transition>
   <HeadingLabel :level="1">Hello World</HeadingLabel>
 
-  <XlsxVue />
+  <XlsxPage />
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
 
-import XlsxVue from './Xlsx.vue';
+import XlsxPage from './Xlsx.vue';
 import HeadingLabel from '/@/components/HeadingLabel';
 
 let showTitle = ref(true);
