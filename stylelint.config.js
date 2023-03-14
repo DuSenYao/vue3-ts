@@ -1,16 +1,19 @@
 module.exports = {
   root: true,
   defaultSeverity: 'warning',
-  extends: ['stylelint-config-recommended-scss', 'stylelint-config-recess-order'],
+  extends: ['stylelint-config-recommended-scss', 'stylelint-config-recess-order', 'stylelint-config-standard-scss'],
   plugins: ['stylelint-declaration-block-no-ignored-properties'],
   rules: {
+    'scss/dollar-variable-pattern': null,
     'selector-class-pattern': null,
     'order/properties-alphabetical-order': null,
+    // 嵌套过多，建议关闭此规则
+    'no-descending-specificity': null,
     'selector-max-id': 1,
     'selector-pseudo-class-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global']
+        ignorePseudoClasses: ['deep', 'global']
       }
     ],
     'at-rule-no-unknown': [
@@ -25,22 +28,20 @@ module.exports = {
           'function',
           'if',
           'each',
+          'extend',
           'include',
           'mixin',
           'at-root'
         ]
       }
     ],
-    'declaration-block-trailing-semicolon': 'always',
     'rule-empty-line-before': [
       'always',
       {
         ignore: ['after-comment', 'first-nested']
       }
     ],
-    'unit-no-unknown': [true, { ignoreUnits: ['rpx'] }],
-    // 样式块中不允许重复的属性
-    'declaration-block-no-duplicate-properties': true,
+    'color-function-notation': 'legacy',
     // 函数 url 链接不允许 shceme relative
     'function-url-no-scheme-relative': true,
     // 可组合成一个属性的写法，不允许拆开书写
@@ -55,35 +56,23 @@ module.exports = {
     'font-family-name-quotes': 'always-unless-keyword',
     // url 函数内部必须有引号
     'function-url-quotes': 'always',
-    // 指定字符串引号为单引号
-    'string-quotes': 'single',
+    'value-keyword-case': ['lower', { ignoreKeywords: ['optimizeLegibility', 'currentColor'] }],
     'max-nesting-depth': [10, { ignore: ['blockless-at-rules', 'pseudo-classes'] }],
-    'selector-no-qualifying-type': [true, { ignore: ['attribute', 'class', 'id'] }],
-    'declaration-colon-newline-after': null
+    'selector-no-qualifying-type': [true, { ignore: ['attribute', 'class', 'id'] }]
   },
   ignoreFiles: ['**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx'],
   overrides: [
     {
       files: ['*.vue', '**/*.vue'],
       extends: [
-        'stylelint-config-recommended-scss',
         'stylelint-config-recess-order',
-        'stylelint-config-recommended-vue'
+        'stylelint-config-standard-scss',
+        'stylelint-config-recommended-vue/scss'
       ],
       rules: {
         'keyframes-name-pattern': null,
-        'selector-pseudo-class-no-unknown': [
-          true,
-          {
-            ignorePseudoClasses: ['deep', 'global']
-          }
-        ],
-        'selector-pseudo-element-no-unknown': [
-          true,
-          {
-            ignorePseudoElements: ['v-deep', 'v-global', 'v-slotted']
-          }
-        ]
+        'declaration-property-value-no-unknown': [true, { ignoreProperties: { '/.+/': '/(v-bind(.*))|($.*)/' } }],
+        'selector-pseudo-element-no-unknown': true
       }
     }
   ]

@@ -239,13 +239,7 @@ module.exports = defineConfig({
     'template-curly-spacing': [2, 'never'],
     'wrap-iife': [2, 'any'],
     'yield-star-spacing': [2, 'both'],
-    'object-curly-spacing': [
-      2,
-      'always',
-      {
-        objectsInObjects: false
-      }
-    ],
+    'object-curly-spacing': [2, 'always'],
     'no-alert': process.env.NODE_ENV === 'production' ? 1 : 0,
     'no-array-constructor': 2,
     'no-bitwise': 1,
