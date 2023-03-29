@@ -9,7 +9,7 @@ export default defineComponent({
     }
   },
   setup(props, { slots }) {
-    const tag = `h${props.level}`;
-    return () => <tag>{slots.default ? slots.default() : ''}</tag>;
+    const Tag = `h${props.level}`;
+    return () => <Tag>{slots.default ? slots.default() : ''}</Tag>;
   }
 });

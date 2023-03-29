@@ -1,5 +1,5 @@
 // createRouter 用来新建路由实例，createWebHashHistory 用来配置内部使用 hash 模式的路由
-import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, type Router, type RouteRecordRaw } from 'vue-router';
 import { getToken } from '/@/utils/auth';
 import NProgress from 'nprogress';
 import LAYOUT from '/@/layout/basic/index.vue';
@@ -22,12 +22,18 @@ const routes: Array<RouteRecordRaw> = [
     name: 'About',
     component: LAYOUT,
     children: [{ path: '/about', component: () => import('/@/pages/About.vue') }]
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: '404',
+    component: () => import('/@/404.vue')
   }
 ];
 
 const router: Router = createRouter({
   history: createWebHashHistory(),
   routes,
+  strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 })
 });
 

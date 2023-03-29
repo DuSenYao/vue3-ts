@@ -250,7 +250,6 @@ module.exports = defineConfig({
     'no-extend-native': 2,
     'no-multi-assign': 1,
     'no-negated-condition': 2,
-    'no-duplicate-imports': 2,
     'no-extra-bind': 2,
     'no-tabs': 2,
     'no-extra-parens': [2, 'functions'],

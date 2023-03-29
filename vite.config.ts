@@ -35,15 +35,14 @@ export default defineConfig({
     ]
   },
   server: {
-    port: 3333,
-    host: 'localhost',
     open: true
   },
   build: {
     target: 'esnext',
     outDir: 'dist',
+    reportCompressedSize: false,
     chunkSizeWarningLimit: 2000,
-    sourcemap: true
+    sourcemap: process.env.NODE_ENV === 'development'
   },
   css: {
     preprocessorOptions: {
