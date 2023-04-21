@@ -19,7 +19,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"],
-    "types": ["element-plus/global", "vite/client", "jest"],
+    "types": ["element-plus/global", "vite/client", "jest", "node"],
     "paths": {
       "/@/*": ["src/*"],
       "/#/*": ["types/*"]

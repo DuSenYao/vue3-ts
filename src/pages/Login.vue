@@ -20,7 +20,7 @@ import { ElForm } from 'element-plus';
 import { setToken } from '/@/utils/auth';
 import { reactive, ref } from 'vue';
 
-import router from '/@/router';
+import { router } from '/@/router';
 
 type FormInstace = InstanceType<typeof ElForm>;
 const ruleFormRef = ref<FormInstace>();

@@ -1,17 +1,24 @@
-import { createApp } from 'vue';
 import App from '/@/App.vue';
-import router from '/@/router';
-import { store, key } from '/@/store';
 
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
+import { createApp } from 'vue';
+import { router, setupRouter } from '/@/router';
+import { setupRouterGuard } from '/@/router/guard';
+import { setupStore } from '/@/store';
 
 import '/@/styles/index.scss'; // global css
 
-const app = createApp(App);
+function bootstrap() {
+  const app = createApp(App);
 
-app.config.globalProperties.$AILEMENTE = {
-  size: 'medium'
-};
+  // 配置状态管理
+  setupStore(app);
 
-app.use(store, key).use(router).use(ElementPlus).mount('#app');
+  // 配置路由器
+  setupRouter(app);
+
+  // 配置路由守卫
+  setupRouterGuard(router);
+
+  app.mount('#app');
+}
+bootstrap();

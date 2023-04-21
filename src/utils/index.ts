@@ -8,3 +8,15 @@ export function useGlobalConfig() {
   }
   return instance.appContext.config.globalProperties.$AILEMENTE || {};
 }
+
+/**
+ * 复制到剪切板
+ * @param {string} id
+ */
+export async function useClipboard(id: string) {
+  const el = document.getElementById(id) as HTMLInputElement;
+  const value = el.value;
+  // 通过 navigator.clipboard 全局访问系统剪切板
+  // 使用 clipboard 的 writeText 方法实现复制
+  await navigator.clipboard.writeText(value);
+}

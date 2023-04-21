@@ -6,10 +6,14 @@
   <HeadingLabel :level="1">Hello World</HeadingLabel>
 
   <XlsxPage />
+
+  <textarea id="content" name="textarea" cols="30" rows="10"></textarea>
+  <el-button @click="useClipboard('content')">复制内容到剪切板</el-button>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useClipboard } from '/@/utils/index';
 
 import XlsxPage from './Xlsx.vue';
 import HeadingLabel from '/@/components/HeadingLabel';

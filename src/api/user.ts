@@ -1,17 +1,16 @@
-import axios from 'axios';
+import { defHttp } from '/@/utils/http';
+import type { LoginParams } from './model/userModel';
 
-interface Api {
-  'user/info': {
-    id: string;
-  };
-  'user/name': {
-    id: string;
-    name: string;
-  };
+enum Api {
+  Login = '/login'
 }
 
-export function request<T extends keyof Api>(url: T, obj?: Api[T]) {
-  return axios.post(url, obj);
+/**
+ * @description 登录
+ */
+export function Login(params: LoginParams) {
+  return defHttp.post({
+    url: Api.Login,
+    params
+  });
 }
-
-request('user/info');

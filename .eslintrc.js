@@ -291,7 +291,6 @@ module.exports = defineConfig({
       }
     ],
     'array-bracket-spacing': [2, 'never'],
-    'arrow-parens': [1, 'always'],
     'computed-property-spacing': [1, 'never'],
     'consistent-return': 0,
     'default-case': 1,

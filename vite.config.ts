@@ -5,6 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import viteCompression from 'vite-plugin-compression';
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);
@@ -20,6 +21,9 @@ export default defineConfig({
     }),
     Components({
       resolvers: [ElementPlusResolver()]
+    }),
+    viteCompression({
+      threshold: 1024000 // 对大于 1mb 的文件进行压缩
     })
   ],
   resolve: {
