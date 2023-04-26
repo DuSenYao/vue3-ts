@@ -46,7 +46,7 @@ export default defineConfig({
     outDir: 'dist',
     reportCompressedSize: false,
     chunkSizeWarningLimit: 2000,
-    sourcemap: process.env.NODE_ENV === 'development'
+    sourcemap: import.meta.env.DEV
   },
   css: {
     preprocessorOptions: {
