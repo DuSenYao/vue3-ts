@@ -70,11 +70,11 @@
     "node": ">=14"
   },
   "lint-staged": {
-    "*.{js,ts,tsx,vue}": [
+    "src/**/*.{js,ts,tsx,vue}": [
       "eslint --cache --max-warnings 0 --fix",
       "prettier --write"
     ],
-    "*.{vue,less,postcss,css,scss}": [
+    "src/**/*.{vue,less,postcss,css,scss}": [
       "stylelint --cache --fix",
       "prettier --write"
     ]
