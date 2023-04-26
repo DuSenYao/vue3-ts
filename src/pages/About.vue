@@ -8,7 +8,7 @@
   <XlsxPage />
 
   <textarea id="content" name="textarea" cols="30" rows="10"></textarea>
-  <el-button @click="useClipboard('content')">复制内容到剪切板</el-button>
+  <ElButton @click="useClipboard('content')">复制内容到剪切板</ElButton>
 </template>
 
 <script setup lang="ts">
