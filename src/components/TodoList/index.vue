@@ -35,7 +35,6 @@ export default {
 };
 </script>
 
-<!-- 使用 <script setup> 可以让代码变得更加精简，这也是现在开发 Vue 3 项目必备的写法。 -->
 <script setup lang="ts">
 import { useTodos } from './useTodos';
 

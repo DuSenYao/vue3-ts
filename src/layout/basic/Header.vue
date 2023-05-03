@@ -1,7 +1,7 @@
 <template>
   <header class="vt-header">
     <template v-for="({ name, to }, i) in linkList" :key="to">
-      <router-link :to="to">{{ name }}</router-link>
+      <RouterLink :to="to">{{ name }}</RouterLink>
       <span>{{ linkList.length - 1 !== i ? ' | ' : '' }}</span>
     </template>
   </header>

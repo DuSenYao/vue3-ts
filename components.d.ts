@@ -5,16 +5,16 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 import '@vue/runtime-core'
 
-export {};
+export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Button: typeof import('./src/components/button/Button.vue')['default'];
-    ElButton: typeof import('element-plus/es')['ElButton'];
-    ElFormItem: typeof import('element-plus/es')['ElFormItem'];
-    ElInput: typeof import('element-plus/es')['ElInput'];
-    RouterLink: typeof import('vue-router')['RouterLink'];
-    RouterView: typeof import('vue-router')['RouterView'];
-    TodoList: typeof import('./src/components/TodoList/index.vue')['default'];
+    Button: typeof import('./src/components/button/Button.vue')['default']
+    ElButton: typeof import('element-plus/es')['ElButton']
+    ElFormItem: typeof import('element-plus/es')['ElFormItem']
+    ElInput: typeof import('element-plus/es')['ElInput']
+    RouterLink: typeof import('vue-router')['RouterLink']
+    RouterView: typeof import('vue-router')['RouterView']
+    TodoList: typeof import('./src/components/TodoList/index.vue')['default']
   }
 }
