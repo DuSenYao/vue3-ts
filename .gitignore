@@ -15,6 +15,7 @@ pnpm-debug.log*
 
 # 本地缓存文件
 .stylelintcache
+.eslintcache
 tests/**/coverage/
 tests/**/__snapshots__
 
