@@ -17,6 +17,12 @@
   </div>
 </template>
 
+<script lang="ts">
+export default {
+  name: 'Login'
+};
+</script>
+
 <script setup lang="ts">
 import { ElForm } from 'element-plus';
 import { setToken } from '/@/utils/auth';

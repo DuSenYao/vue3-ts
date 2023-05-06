@@ -7,15 +7,18 @@ interface Todo {
   done: boolean;
 }
 
-// 把和清单相关的所有数据和方法，都放在函数内部定义并且返回，这样这个函数就可以放在任意的地方来维护。
+/**
+ * @description 待办列表
+ */
 export function useTodos() {
-  // ref 函数使任何响应式变量在任何地方起作用，ref 接收参数并将其包裹在一个带有 value property 的对象中返回，然后可以使用该 property 访问或更改响应式变量的值
   const title = ref(''); // { value: '' }
-
-  const showModal = ref(false);
+  const showModal = ref(false); // 是否显示提示
 
   const todos: Ref<Todo[]> = ref(useStorage('todos', []));
 
+  /**
+   * @description 添加待办
+   */
   function addTodo() {
     if (!title.value) {
       showModal.value = true;
@@ -31,15 +34,22 @@ export function useTodos() {
     title.value = '';
   }
 
+  /**
+   * @description 清除已完成
+   */
   function clear() {
     todos.value = todos.value.filter((v: Todo) => !v.done);
   }
 
+  /**
+   * @description 删除待办
+   * @param i 待办索引
+   */
   function removeTodo(i: number) {
     todos.value.splice(i, 1);
   }
 
-  const selectedNum = computed(() => todos.value.filter((v: Todo) => v.done).length);
+  const selectedNum = computed(() => todos.value.filter((v: Todo) => v.done).length); // 选中的数量
   const allDone = computed({
     get() {
       return selectedNum.value === todos.value.length;
@@ -49,7 +59,7 @@ export function useTodos() {
         todo.done = val;
       });
     }
-  });
+  }); // 是否全选
 
   return { title, showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone };
 }
