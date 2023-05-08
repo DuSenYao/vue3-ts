@@ -9,6 +9,8 @@
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "lint:stylelint": "stylelint --cache --fix \"src/**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
     "depcruise": "depcruise src --include-only \"^src\" --config --output-type dot | dot -T svg > dependency-graph.svg",
+    "depcruise:test": "depcruise src --config .dependency-cruiser.cjs",
+    "svgo": "svgo -f src/icons",
     "test:unit": "jest",
     "test:unit-coverage": "jest --coverage",
     "prepare": "husky install"
@@ -68,6 +70,8 @@
     "unplugin-vue-components": "^0.24.1",
     "vite": "^4.3.5",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-imagemin": "^0.6.1",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vue-eslint-parser": "^9.2.1",
     "vue-tsc": "^1.6.4"
   },

@@ -7,6 +7,8 @@ import { router, setupRouter } from '/@/router';
 import { setupRouterGuard } from '/@/router/guard';
 import { setupStore } from '/@/store';
 
+import 'virtual:svg-icons-register'; // svg
+
 import '/@/styles/index.scss'; // global css
 
 function bootstrap() {
