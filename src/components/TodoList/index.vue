@@ -28,7 +28,6 @@
   </transition>
 </template>
 
-<!-- script setup 中没法返回组件的名字，所以需要一个单独的标签，使用 options 的语法设置组件的 name 属性。 -->
 <script lang="ts">
 export default {
   name: 'TodoList'

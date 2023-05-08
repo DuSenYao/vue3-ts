@@ -27,8 +27,7 @@ export default {
 import { ElForm } from 'element-plus';
 import { setToken } from '/@/utils/auth';
 import { reactive, ref } from 'vue';
-
-import { router } from '/@/router';
+import { useRouter } from 'vue-router';
 
 type FormInstace = InstanceType<typeof ElForm>;
 const ruleFormRef = ref<FormInstace>();
@@ -55,6 +54,7 @@ const rules = reactive({
   ]
 });
 
+const router = useRouter();
 const signIn = (formEl: FormInstace | undefined) => {
   if (!formEl) return;
   formEl.validate((valid) => {
