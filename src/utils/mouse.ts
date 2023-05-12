@@ -1,6 +1,8 @@
-// 在使用 Composition API 拆分功能时，ref、computed 等功能都是从 Vue 中单独引入，而不是依赖 this 上下文。可以把组件内部的任何一段代码，从组件文件里抽离出一个独立的文件进行维护。
 import { ref, onMounted, onUnmounted } from 'vue';
 
+/**
+ * 获取鼠标位置
+ */
 export function useMouse() {
   const x = ref(0);
   const y = ref(0);

@@ -4,14 +4,12 @@
   </svg>
 </template>
 
-<script>
-export default {
-  name: 'SvgIcon'
-};
-</script>
-
 <script setup>
 import { computed } from 'vue';
+
+defineOptions({
+  name: 'SvgIcon'
+});
 
 const props = defineProps({
   name: {

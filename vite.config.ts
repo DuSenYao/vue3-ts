@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
-import plugins from 'config/plugins.cjs';
+import plugins from './config/plugins';
 
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir);

@@ -4,15 +4,13 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: 'VTButton'
-};
-</script>
-
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useGlobalConfig } from '/@/utils/index';
+
+defineOptions({
+  name: 'VTButton'
+});
 
 export interface Props {
   size?: '' | 'small' | 'medium' | 'large';

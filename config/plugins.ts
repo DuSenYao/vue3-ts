@@ -10,7 +10,9 @@ import Components from 'unplugin-vue-components/vite';
 import viteCompression from 'vite-plugin-compression';
 import viteImagemin from 'vite-plugin-imagemin';
 
-export default function plugins() {
+import type { PluginOption } from 'vite';
+
+export default function plugins(): PluginOption[] {
   return [
     vue(),
     vueJsx(),
@@ -21,7 +23,7 @@ export default function plugins() {
       resolvers: [ElementPlusResolver()]
     }),
     viteCompression({
-      threshold: 1024000 // 对大于 1mb 的文件进行压缩
+      threshold: 10240
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹

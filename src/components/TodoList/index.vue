@@ -4,8 +4,7 @@
     <input v-model="title" type="text" @keydown.enter="addTodo" />
     <button v-if="selectedNum > 0" @click="clear">清理</button>
     <ul v-if="todos.length">
-      <!-- 通过 tag 属性去指定渲染一个元素 -->
-      <transition-group name="flip-list" tag="ul">
+      <TransitionGroup name="flip-list" tag="ul">
         <li v-for="(todo, i) in todos" :key="todo.title">
           <label>
             <input v-model="todo.done" type="checkbox" />
@@ -13,7 +12,7 @@
           </label>
           <span class="remove-btn" @click="removeTodo(i)">❌</span>
         </li>
-      </transition-group>
+      </TransitionGroup>
     </ul>
     <div v-else>暂无数据</div>
     <div>
@@ -44,7 +43,6 @@ let { showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone, title 
 .done {
   color: $basic-color;
 
-  // :deep() 样式穿透
   :deep(.el-button) {
     color: #334453;
   }

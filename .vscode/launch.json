@@ -10,6 +10,8 @@
       "name": "vue3 debug",
       "url": "http://localhost:5173",
       "webRoot": "${workspaceFolder}",
+      "userDataDir": false,
+      "runtimeExecutable": "canary",
       "sourceMapPathOverrides": {
         "/./*": "${webRoot}/*",
         "/src/*": "${webRoot}/*",

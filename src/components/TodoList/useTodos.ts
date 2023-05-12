@@ -11,7 +11,7 @@ interface Todo {
  * @description 待办列表
  */
 export function useTodos() {
-  const title = ref(''); // { value: '' }
+  const title = ref('');
   const showModal = ref(false); // 是否显示提示
 
   const todos: Ref<Todo[]> = ref(useStorage('todos', []));
