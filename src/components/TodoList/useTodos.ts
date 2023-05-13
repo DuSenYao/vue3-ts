@@ -38,7 +38,7 @@ export function useTodos() {
    * @description 清除已完成
    */
   function clear() {
-    todos.value = todos.value.filter((v: Todo) => !v.done);
+    todos.value = todos.value.filter((v) => !v.done);
   }
 
   /**
@@ -49,13 +49,13 @@ export function useTodos() {
     todos.value.splice(i, 1);
   }
 
-  const selectedNum = computed(() => todos.value.filter((v: Todo) => v.done).length); // 选中的数量
+  const selectedNum = computed(() => todos.value.filter((v) => v.done).length); // 选中的数量
   const allDone = computed({
     get() {
       return selectedNum.value === todos.value.length;
     },
     set(val: boolean) {
-      todos.value.forEach((todo: Todo) => {
+      todos.value.forEach((todo) => {
         todo.done = val;
       });
     }

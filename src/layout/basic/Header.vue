@@ -7,14 +7,12 @@
   </header>
 </template>
 
-<script lang="ts">
-export default defineComponent({
+<script setup lang="ts">
+import { reactive } from 'vue';
+
+defineOptions({
   name: 'LayoutHeader'
 });
-</script>
-
-<script setup lang="ts">
-import { defineComponent, withDefaults, reactive } from 'vue';
 
 export interface Props {
   height?: string;

@@ -4,16 +4,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'XlsxPage'
-});
-</script>
-
 <script setup lang="ts">
 import * as xlsx from 'xlsx';
+
+defineOptions({
+  name: 'XlsxPage'
+});
 
 interface LangXlsx {
   Key: string;

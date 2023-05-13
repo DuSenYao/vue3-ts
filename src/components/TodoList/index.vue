@@ -27,14 +27,12 @@
   </transition>
 </template>
 
-<script lang="ts">
-export default {
-  name: 'TodoList'
-};
-</script>
-
 <script setup lang="ts">
 import { useTodos } from './useTodos';
+
+defineOptions({
+  name: 'TodoList'
+});
 
 let { showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone, title } = useTodos();
 </script>
