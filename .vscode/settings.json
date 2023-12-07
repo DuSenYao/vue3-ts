@@ -4,6 +4,6 @@
     "/#/": "${workspaceRoot}/types"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["pinia"],
+  "cSpell.words": ["echarts", "pinia"],
   "vue.updateImportsOnFileMove.enabled": true
 }

@@ -31,7 +31,8 @@ module.exports = {
           'extend',
           'include',
           'mixin',
-          'at-root'
+          'at-root',
+          'use'
         ]
       }
     ],

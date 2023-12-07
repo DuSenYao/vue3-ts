@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
 </script>
 
 <style lang="scss" scoped>
-@import '/@/styles/mixin';
+@use '/@/styles/mixin' as *;
 
 @include b(header) {
   flex-shrink: 0;

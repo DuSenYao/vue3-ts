@@ -36,7 +36,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // 为 scss 配置共享全局变量
-        additionalData: `@import "/@/styles/variable.scss";`
+        additionalData: `@use "/@/styles/variable.scss" as *;`
       }
     }
   }

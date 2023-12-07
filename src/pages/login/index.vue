@@ -2,7 +2,7 @@
   <div class="login">
     <main class="login-container">
       <h1 class="title">用户登录</h1>
-      <el-form ref="ruleFormRef" :model="form" :rules="rules" label-position="right">
+      <ElForm ref="ruleFormRef" :model="form" :rules="rules" label-position="right">
         <el-form-item prop="name">
           <el-input v-model="form.name" />
         </el-form-item>
@@ -12,7 +12,7 @@
         <el-form-item>
           <el-button class="submit" type="primary" @click="signIn(ruleFormRef)">登录</el-button>
         </el-form-item>
-      </el-form>
+      </ElForm>
     </main>
   </div>
 </template>

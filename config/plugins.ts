@@ -20,7 +20,11 @@ export default function plugins(): PluginOption[] {
       resolvers: [ElementPlusResolver()]
     }),
     Components({
-      resolvers: [ElementPlusResolver()]
+      resolvers: [
+        ElementPlusResolver({
+          importStyle: 'sass'
+        })
+      ]
     }),
     viteCompression({
       threshold: 10240

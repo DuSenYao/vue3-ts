@@ -1,7 +1,5 @@
 import App from '/@/App.vue';
 
-import 'element-plus/dist/index.css';
-
 import { createApp } from 'vue';
 import { router, setupRouter } from '/@/router';
 import { setupRouterGuard } from '/@/router/guard';

@@ -50,6 +50,8 @@ module.exports = defineConfig({
         varsIgnorePattern: '^_'
       }
     ],
+    'vue/prefer-define-options': 'warn',
+    'vue/valid-define-options': 'warn',
     // 'space-before-function-paren': 'off',
     // 'vue/attributes-order': 'off',
     // 'vue/one-component-per-file': 'off',

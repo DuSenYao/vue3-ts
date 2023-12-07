@@ -1,8 +1,10 @@
 <template>
-  <div>
+  <div class="todo">
     <slot></slot>
-    <input v-model="title" type="text" @keydown.enter="addTodo" />
-    <button v-if="selectedNum > 0" @click="clear">清理</button>
+    <div>
+      <input v-model="title" type="text" @keydown.enter="addTodo" />
+      <button v-if="selectedNum > 0" @click="clear">清理</button>
+    </div>
     <ul v-if="todos.length">
       <TransitionGroup name="flip-list" tag="ul">
         <li v-for="(todo, i) in todos" :key="todo.title">
@@ -20,6 +22,7 @@
       <span>{{ selectedNum }}/{{ todos.length }}</span>
     </div>
   </div>
+
   <transition name="modal">
     <div v-show="showModal" class="info-wrapper">
       <div class="info">请输入内容！</div>
@@ -38,11 +41,24 @@ let { showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone, title 
 </script>
 
 <style lang="scss" scoped>
-.done {
-  color: $basic-color;
+.todo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 0 auto;
 
-  :deep(.el-button) {
-    color: #334453;
+  .done {
+    color: $basic-color;
+
+    :deep(.el-button) {
+      color: #334453;
+    }
+  }
+
+  .remove-btn {
+    margin-left: 10px;
+    cursor: pointer;
   }
 }
 
