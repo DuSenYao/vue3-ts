@@ -34,7 +34,7 @@
 import { useTodos } from './useTodos';
 
 defineOptions({
-  name: 'TodoList'
+  name: 'TodoList',
 });
 
 let { showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone, title } = useTodos();

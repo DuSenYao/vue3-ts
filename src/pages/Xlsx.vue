@@ -8,7 +8,7 @@
 import * as xlsx from 'xlsx';
 
 defineOptions({
-  name: 'XlsxPage'
+  name: 'XlsxPage',
 });
 
 interface LangXlsx {
@@ -50,7 +50,7 @@ async function handleFileAsync(e: any) {
     JA: {},
     KO: {},
     RU: {},
-    TH: {}
+    TH: {},
   };
 
   jsa.forEach(({ Key, 俄语, 印地语, 德语, 日语, 汉语, 法语, 泰语, 英语, 西语, 阿拉伯语, 韩语 }) => {

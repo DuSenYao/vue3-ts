@@ -29,7 +29,7 @@ export function useTodos() {
     }
     todos.value.push({
       title: title.value,
-      done: false
+      done: false,
     });
     title.value = '';
   }
@@ -58,7 +58,7 @@ export function useTodos() {
       todos.value.forEach((todo) => {
         todo.done = val;
       });
-    }
+    },
   }); // 是否全选
 
   return { title, showModal, todos, addTodo, clear, removeTodo, selectedNum, allDone };

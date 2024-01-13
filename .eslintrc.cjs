@@ -5,7 +5,7 @@ module.exports = defineConfig({
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -13,14 +13,14 @@ module.exports = defineConfig({
     ecmaVersion: 'latest',
     sourceType: 'module',
     ecmaFeatures: {
-      impliedStrict: true
-    }
+      impliedStrict: true,
+    },
   },
   extends: [
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   rules: {
     'vue/script-setup-uses-vars': 'error',
@@ -40,15 +40,15 @@ module.exports = defineConfig({
       'warn',
       {
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
-      }
+        varsIgnorePattern: '^_',
+      },
     ],
     'no-unused-vars': [
       'warn',
       {
         argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_'
-      }
+        varsIgnorePattern: '^_',
+      },
     ],
     'vue/prefer-define-options': 'warn',
     'vue/valid-define-options': 'warn',
@@ -84,39 +84,38 @@ module.exports = defineConfig({
       {
         singleline: 8,
         multiline: {
-          max: 1
-        }
-      }
+          max: 1,
+        },
+      },
     ],
     'accessor-pairs': 2,
     'arrow-spacing': [
       2,
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
     'block-spacing': [2, 'always'],
     'brace-style': [
       2,
       '1tbs',
       {
-        allowSingleLine: true
-      }
+        allowSingleLine: true,
+      },
     ],
     camelcase: [
       0,
       {
-        properties: 'always'
-      }
+        properties: 'always',
+      },
     ],
-    'comma-dangle': [2, 'never'],
     'comma-spacing': [
       2,
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     'comma-style': [2, 'last'],
     curly: [2, 'multi-line'],
@@ -127,37 +126,37 @@ module.exports = defineConfig({
       2,
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     indent: [
       2,
       2,
       {
-        SwitchCase: 1
-      }
+        SwitchCase: 1,
+      },
     ],
     'jsx-quotes': [2, 'prefer-double'],
     'key-spacing': [
       2,
       {
         beforeColon: false,
-        afterColon: true
-      }
+        afterColon: true,
+      },
     ],
     'keyword-spacing': [
       2,
       {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
     'new-cap': [
       2,
       {
         newIsCap: true,
-        capIsNew: false
-      }
+        capIsNew: false,
+      },
     ],
     'no-caller': 2,
     'no-eval': 2,
@@ -165,15 +164,15 @@ module.exports = defineConfig({
       2,
       {
         allowLoop: false,
-        allowSwitch: false
-      }
+        allowSwitch: false,
+      },
     ],
     'no-multi-spaces': 2,
     'no-multiple-empty-lines': [
       2,
       {
-        max: 1
-      }
+        max: 1,
+      },
     ],
     'no-return-assign': [2, 'except-parens'],
     'no-sequences': 2,
@@ -182,8 +181,8 @@ module.exports = defineConfig({
     'no-unneeded-ternary': [
       2,
       {
-        defaultAssignment: false
-      }
+        defaultAssignment: false,
+      },
     ],
     'no-useless-computed-key': 2,
     'no-useless-constructor': 2,
@@ -191,8 +190,8 @@ module.exports = defineConfig({
     'one-var': [
       2,
       {
-        initialized: 'never'
-      }
+        initialized: 'never',
+      },
     ],
     'operator-linebreak': [
       2,
@@ -200,9 +199,9 @@ module.exports = defineConfig({
       {
         overrides: {
           '?': 'before',
-          ':': 'before'
-        }
-      }
+          ':': 'before',
+        },
+      },
     ],
     'padded-blocks': [2, 'never'],
     quotes: [
@@ -210,16 +209,16 @@ module.exports = defineConfig({
       'single',
       {
         avoidEscape: true,
-        allowTemplateLiterals: true
-      }
+        allowTemplateLiterals: true,
+      },
     ],
     semi: [2, 'always'],
     'semi-spacing': [
       2,
       {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     'space-before-blocks': [2, 'always'],
     'space-in-parens': [2, 'never'],
@@ -228,15 +227,15 @@ module.exports = defineConfig({
       2,
       {
         words: true,
-        nonwords: false
-      }
+        nonwords: false,
+      },
     ],
     'spaced-comment': [
       2,
       'always',
       {
-        markers: ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!', ',']
-      }
+        markers: ['global', 'globals', 'eslint', 'eslint-disable', '*package', '!', ','],
+      },
     ],
     'template-curly-spacing': [2, 'never'],
     'wrap-iife': [2, 'any'],
@@ -289,8 +288,8 @@ module.exports = defineConfig({
       1,
       {
         terms: ['todo', 'fixme', 'xxx'],
-        location: 'start'
-      }
+        location: 'start',
+      },
     ],
     'array-bracket-spacing': [2, 'never'],
     'computed-property-spacing': [1, 'never'],
@@ -317,6 +316,6 @@ module.exports = defineConfig({
     strict: 2,
     'vars-on-top': 2,
     'wrap-regex': 0,
-    yoda: [2, 'never']
-  }
+    yoda: [2, 'never'],
+  },
 });

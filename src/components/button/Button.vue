@@ -9,7 +9,7 @@ import { computed } from 'vue';
 import { useGlobalConfig } from '/@/utils/index';
 
 defineOptions({
-  name: 'VTButton'
+  name: 'VTButton',
 });
 
 export interface Props {
@@ -18,7 +18,7 @@ export interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   size: '',
-  type: ''
+  type: '',
 });
 
 const globalConfig = useGlobalConfig();

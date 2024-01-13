@@ -5,11 +5,11 @@ export default defineComponent({
   props: {
     level: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   setup(props, { slots }) {
     const Tag = `h${props.level}`;
     return () => <Tag>{slots.default ? slots.default() : ''}</Tag>;
-  }
+  },
 });

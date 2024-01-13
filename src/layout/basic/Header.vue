@@ -11,7 +11,7 @@
 import { reactive } from 'vue';
 
 defineOptions({
-  name: 'LayoutHeader'
+  name: 'LayoutHeader',
 });
 
 export interface Props {
@@ -21,17 +21,17 @@ export interface Props {
 let linkList = reactive([
   {
     name: '首页',
-    to: '/'
+    to: '/',
   },
   {
     name: '关于',
-    to: '/about'
-  }
+    to: '/about',
+  },
 ]);
 
 // 使用类型声明时的默认 props 值
 withDefaults(defineProps<Props>(), {
-  height: '60px'
+  height: '60px',
 });
 </script>
 

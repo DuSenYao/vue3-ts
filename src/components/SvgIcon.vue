@@ -8,18 +8,18 @@
 import { computed } from 'vue';
 
 defineOptions({
-  name: 'SvgIcon'
+  name: 'SvgIcon',
 });
 
 const props = defineProps({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   color: {
     type: String,
-    default: '#4E5969'
-  }
+    default: '#4E5969',
+  },
 });
 
 const symbolId = computed(() => `#icon-${props.name}`);

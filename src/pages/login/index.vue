@@ -24,7 +24,7 @@ import { reactive, ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 defineOptions({
-  name: 'LoginPage'
+  name: 'LoginPage',
 });
 
 type FormInstace = InstanceType<typeof ElForm>;
@@ -32,7 +32,7 @@ const ruleFormRef = ref<FormInstace>();
 
 const form = reactive({
   name: 'user',
-  password: 'password'
+  password: 'password',
 });
 
 const rules = reactive({
@@ -40,16 +40,16 @@ const rules = reactive({
     {
       required: true,
       message: '请输入用户名',
-      trigger: 'blur'
-    }
+      trigger: 'blur',
+    },
   ],
   password: [
     {
       required: true,
       message: '请输入密码',
-      trigger: 'blur'
-    }
-  ]
+      trigger: 'blur',
+    },
+  ],
 });
 
 const router = useRouter();
