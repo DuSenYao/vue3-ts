@@ -1,8 +1,4 @@
 {
-  "path-intellisense.mappings": {
-    "/@/": "${workspaceRoot}/src",
-    "/#/": "${workspaceRoot}/types"
-  },
   "typescript.tsdk": "node_modules/typescript/lib",
   "cSpell.words": ["echarts", "pinia"],
   "vue.updateImportsOnFileMove.enabled": true
